@@ -1,4 +1,4 @@
-﻿import { Book, Bookmark, Heart, Sparkles } from "lucide-react";
+import { Book, Bookmark, Heart, Sparkles, Lightbulb, PlayCircle, FileText } from "lucide-react";
 
 import type { ApiResponse } from "../types";
 import { clsx } from "clsx";
@@ -138,6 +138,53 @@ export function ResponseCard({ response }: ResponseCardProps) {
                             {compassion_message}
                         </p>
                     </div>
+
+                    {response.practical_advice && (
+                        <div 
+                            className="mt-8 pt-6 border-t border-gray-100"
+                            role="region" 
+                            aria-label="Practical Steps and Advice"
+                        >
+                            <div className="flex items-center gap-2 text-indigo-600 mb-3" aria-hidden="true">
+                                <Lightbulb className="w-5 h-5" />
+                                <h4 className="font-semibold text-lg">Practical Steps</h4>
+                            </div>
+                            <p className="text-gray-700 leading-relaxed">
+                                {response.practical_advice}
+                            </p>
+                        </div>
+                    )}
+
+                    {response.resource_link && (
+                        <div className="mt-6" role="complementary" aria-label="Recommended External Resource">
+                            <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 hover:border-indigo-300 transition-colors duration-300">
+                                <h4 className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3" aria-hidden="true">Recommended Resource</h4>
+                                <a
+                                    href={response.resource_link.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={`Open ${response.resource_link.type === 'video' ? 'video' : 'article'}: ${response.resource_link.title} in a new tab`}
+                                    className="group flex items-center gap-4 bg-white p-3 rounded-lg shadow-sm border border-slate-100 hover:shadow-md transition-all duration-300"
+                                >
+                                    <div className="bg-indigo-100 text-indigo-600 p-2 rounded-full group-hover:scale-110 transition-transform duration-300">
+                                        {response.resource_link.type === "video" ? (
+                                            <PlayCircle className="w-6 h-6" />
+                                        ) : (
+                                            <FileText className="w-6 h-6" />
+                                        )}
+                                    </div>
+                                    <div className="flex-1">
+                                        <p className="text-gray-900 font-medium group-hover:text-indigo-600 transition-colors">
+                                            {response.resource_link.title}
+                                        </p>
+                                        <p className="text-sm text-gray-500">
+                                            {response.resource_link.type === "video" ? "Watch Video" : "Read Article"}
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

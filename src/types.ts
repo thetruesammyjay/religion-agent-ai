@@ -1,4 +1,4 @@
-﻿export type Faith = "Christian" | "Islamic" | "Maharaj Ji" | "Interfaith";
+export type Faith = "Christian" | "Islamic" | "Maharaj Ji" | "Interfaith";
 export type ApiFaith = "Christian" | "Islamic" | "Both";
 
 export interface Emotion {
@@ -31,18 +31,24 @@ export interface ChristianResponse {
     detect_emotion: Emotion;
     bible_verse: BibleVerse;
     compassion_message: string;
+    practical_advice?: string;
+    resource_link?: { title: string; url: string; type: "video" | "article" };
 }
 
 export interface IslamicResponse {
     detect_emotion: Emotion;
     quran_verse: QuranVerse;
     compassion_message: string;
+    practical_advice?: string;
+    resource_link?: { title: string; url: string; type: "video" | "article" };
 }
 
 export interface MaharajJiResponse {
     detect_emotion: Emotion;
     maharaj_ji_teaching: MaharajJiTeaching;
     compassion_message: string;
+    practical_advice?: string;
+    resource_link?: { title: string; url: string; type: "video" | "article" };
 }
 
 export interface CombinedResponse {
@@ -51,6 +57,8 @@ export interface CombinedResponse {
     quran_verse: QuranVerse;
     maharaj_ji_teaching?: MaharajJiTeaching;
     compassion_message: string;
+    practical_advice?: string;
+    resource_link?: { title: string; url: string; type: "video" | "article" };
 }
 
 export type ApiResponse =

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useRef } from "react";
 import axios from "axios";
@@ -11,6 +11,7 @@ import {
     detectMaharajJiEmotion,
     getMaharajJiGuidance,
 } from "./lib/maharajJiGuidance";
+import { getPracticalSupport } from "./lib/practicalSupport";
 import type { ApiFaith, ApiResponse, Faith } from "./types";
 
 const API_URL = "https://religion-ai-agents.vercel.app";
@@ -58,10 +59,13 @@ function App() {
 
         if (faith === "Maharaj Ji") {
             const emotion = detectMaharajJiEmotion(text);
+            const support = getPracticalSupport(text, emotion.primary_emotion);
             setResponse({
                 detect_emotion: emotion,
                 maharaj_ji_teaching: getMaharajJiGuidance(text, emotion),
                 compassion_message: buildMaharajJiMessage(text, emotion),
+                practical_advice: support.practical_advice,
+                resource_link: support.resource_link,
             });
             setIsLoading(false);
             setTimeout(scrollToResponse, 100);
@@ -82,6 +86,8 @@ function App() {
                 }
             );
 
+            const support = getPracticalSupport(text, data.detect_emotion.primary_emotion);
+
             if (faith === "Interfaith") {
                 const maharajMessage = buildMaharajJiMessage(
                     text,
@@ -95,9 +101,15 @@ function App() {
                         data.detect_emotion
                     ),
                     compassion_message: `${data.compassion_message}\n\nMaharaj Ji guidance: ${maharajMessage}`,
+                    practical_advice: support.practical_advice,
+                    resource_link: support.resource_link,
                 });
             } else {
-                setResponse(data);
+                setResponse({
+                    ...data,
+                    practical_advice: support.practical_advice,
+                    resource_link: support.resource_link,
+                });
             }
 
             setTimeout(scrollToResponse, 100);

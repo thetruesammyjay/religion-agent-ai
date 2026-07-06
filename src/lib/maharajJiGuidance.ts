@@ -1,4 +1,4 @@
-﻿import source from "../data/maharaj-ji-guidance.md?raw";
+import source from "../data/maharaj-ji-guidance.md?raw";
 
 import type { Emotion, MaharajJiTeaching } from "../types";
 
@@ -31,7 +31,7 @@ function readField(block: string, field: string) {
 function parseGuidanceSource(markdown: string): GuidanceRecord[] {
     return markdown
         .split(/\n(?=##\s+)/g)
-        .map((block) => {
+        .map((block): GuidanceRecord | null => {
             const heading = block.match(/^##\s+(.+)$/m)?.[1]?.trim();
 
             if (!heading) {
@@ -57,8 +57,9 @@ function parseGuidanceSource(markdown: string): GuidanceRecord[] {
 
 const records = parseGuidanceSource(source);
 
-function normalise(value: string) {
-    return value.toLowerCase();
+function normalise(value: string | undefined | null) {
+    if (!value) return "";
+    return String(value).toLowerCase();
 }
 
 function scoreRecord(input: string, record: GuidanceRecord) {
@@ -68,6 +69,19 @@ function scoreRecord(input: string, record: GuidanceRecord) {
 }
 
 function findRecord(text: string, emotion?: Emotion | null) {
+    if (!records || records.length === 0) {
+        return {
+            emotion: "default",
+            teaching_ref: "General Guidance",
+            teaching_text: "Seek peace and truth in all things.",
+            relevance_explanation: "A gentle reminder to find calm.",
+            source_url: "",
+            exact_excerpt: "",
+            keywords: [],
+            message: "Take a deep breath and give yourself a moment of peace."
+        } as GuidanceRecord;
+    }
+
     const input = normalise(`${text} ${emotion?.primary_emotion ?? ""} ${emotion?.context ?? ""}`);
     const directEmotionMatch = records.find(
         (record) => record.emotion === normalise(emotion?.primary_emotion ?? "")

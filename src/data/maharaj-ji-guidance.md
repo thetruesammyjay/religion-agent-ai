@@ -1,4 +1,4 @@
-﻿# Maharaj Ji Emotional Guidance Source
+# Maharaj Ji Emotional Guidance Source
 
 This file stores local guidance records for the Maharaj Ji faith option. Each record is grouped by emotional condition so the application can retrieve a relevant teaching without changing the existing Christian and Islamic API flow.
 
@@ -84,6 +84,51 @@ Source note: publicly accessible material on the Nigerian Guru Maharaj Ji tradit
 - Text: The tradition's moral emphasis can be applied to guilt as a call to honesty, correction, and renewed righteous living. Guilt should not become despair; it should become a turning point toward truth and better conduct.
 - Relevance: This teaching is relevant to guilt because it encourages responsibility without trapping the user in shame.
 - Message: A mistake does not have to become your identity. Face the truth gently, make repair where you can, and let this moment lead you toward better living.
+
+## frustration
+- Reference: Maharaj Ji Teaching on Patience and Inner Peace
+- Source: https://en.wikipedia.org/wiki/Guru_Maharaj_Ji_(Nigeria)
+- Exact excerpt: Peace and harmony
+- Keywords: frustration, frustrated, annoyed, irritated, blocked, nothing works
+- Text: The tradition emphasizes finding inner peace and avoiding the disruption of anger. When external events cause frustration, the focus should shift to internal calm and truth.
+- Relevance: This teaching addresses frustration by directing the user away from the external source of annoyance and back to inner spiritual peace.
+- Message: Take a step back. You cannot control every situation, but you can protect your own peace. Breathe, release the irritation, and focus on what you can change.
+
+## overwhelm
+- Reference: Maharaj Ji Teaching on Simplicity
+- Source: https://en.wikipedia.org/wiki/Guru_Maharaj_Ji_(Nigeria)
+- Exact excerpt: Divine knowledge
+- Keywords: overwhelm, overwhelmed, too much, stress, stressed, pressure, drowning
+- Text: Spiritual guidance often points to simplicity and focusing on the present moment. By connecting with divine truth, the heavy burdens of the world can be set aside.
+- Relevance: This helps an overwhelmed user by encouraging them to simplify their focus and not carry the weight of everything at once.
+- Message: The weight you are carrying is too heavy for right now. Pause. Focus only on truth, peace, and the very next simple step you need to take. Let the rest wait.
+
+## apathy
+- Reference: Maharaj Ji Teaching on Spiritual Awakening
+- Source: https://en.wikipedia.org/wiki/Guru_Maharaj_Ji_(Nigeria)
+- Exact excerpt: Light of truth
+- Keywords: apathy, numb, empty, feel nothing, don't care, indifferent
+- Text: In this tradition, the light of truth and divine love is meant to awaken the soul from spiritual numbness or darkness, bringing a renewed sense of connection to life.
+- Relevance: This teaching addresses numbness by offering a gentle reminder that life still holds warmth and meaning.
+- Message: It is okay if you feel nothing right now; sometimes the heart needs to shut down to rest. The light of truth is still there, and warmth will return to you in time.
+
+## jealousy
+- Reference: Maharaj Ji Teaching on Contentment and Love
+- Source: https://en.wikipedia.org/wiki/Guru_Maharaj_Ji_(Nigeria)
+- Exact excerpt: Divine Love Family
+- Keywords: jealousy, jealous, envy, envious, unfair, resentful, bitter
+- Text: The concept of the Divine Love Family encourages unity and contentment, steering followers away from the division and bitterness caused by envy.
+- Relevance: This guides the user away from the pain of comparing themselves to others.
+- Message: Comparing your path to someone else's will only steal your peace. Trust in your own journey, release the bitterness, and seek contentment in what is uniquely yours.
+
+## hopelessness
+- Reference: Maharaj Ji Teaching on Divine Presence
+- Source: https://en.wikipedia.org/wiki/Guru_Maharaj_Ji_(Nigeria)
+- Exact excerpt: God Is Above Every Body
+- Keywords: hopelessness, hopeless, give up, pointless, despair, dark
+- Text: The belief that a divine presence is above all earthly problems offers a profound source of hope. No situation is beyond the reach of divine truth and love.
+- Relevance: This provides an anchor for users who feel they have reached the end of their own strength.
+- Message: Even when you cannot see the path ahead, the light of truth remains. Do not give up. There is a greater presence that can sustain you when your own strength runs out.
 
 ## default
 - Reference: Maharaj Ji Teaching on Truth, Love, and Peace
