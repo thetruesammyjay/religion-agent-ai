@@ -14,20 +14,9 @@ interface CrisisScenario {
 
 const crisisScenarios: CrisisScenario[] = [
     {
-        keywords: ["divorce", "divorcing", "separation", "leave my husband", "leave my wife", "marriage ending"],
+        keywords: ["suicide", "suicidal", "kill myself", "hurt myself", "self harm", "self-harm", "end my life", "want to die", "wish I were dead", "wish i was dead", "can't go on anymore", "end it all", "no reason to live"],
         support: {
-            practical_advice: "Before making a final decision on your marriage, consider seeking professional marriage counseling to explore if the relationship can be healed. Pause and reflect on the root causes of the conflict, ensure you are safe, and seek guidance from trusted mentors or therapists who can provide an objective perspective.",
-            resource_link: {
-                title: "Should I Get a Divorce? 5 Questions to Ask Yourself",
-                url: "https://www.youtube.com/watch?v=R9KMB9l74t8",
-                type: "video",
-            },
-        }
-    },
-    {
-        keywords: ["suicide", "kill myself", "end my life", "want to die", "can't go on anymore", "end it all"],
-        support: {
-            practical_advice: "Please know that your life has immense value and this pain is temporary, even if it feels permanent right now. Please immediately reach out to a crisis helpline, a trusted friend, or a medical professional. You do not have to carry this alone.",
+            practical_advice: "Your immediate safety matters most. Contact local emergency services now if you may act on these thoughts or have already harmed yourself. Move away from anything you could use to hurt yourself, stay with another person if possible, and contact a crisis service or medical professional. You do not have to handle this moment alone.",
             resource_link: {
                 title: "Find a Helpline - International Crisis Support",
                 url: "https://findahelpline.com/",
@@ -36,7 +25,7 @@ const crisisScenarios: CrisisScenario[] = [
         }
     },
     {
-        keywords: ["abuse", "abusive", "hit me", "beating me", "domestic violence", "hitting me"],
+        keywords: ["abuse", "abusive", "hit me", "hits me", "beating me", "domestic violence", "hitting me", "threatened me", "unsafe at home", "afraid of my partner"],
         support: {
             practical_advice: "Your safety is the highest priority. If you are in immediate danger, please contact local emergency services. Reach out to a domestic violence hotline or shelter to create a safe exit plan. No one deserves to be abused.",
             resource_link: {
@@ -47,12 +36,23 @@ const crisisScenarios: CrisisScenario[] = [
         }
     },
     {
+        keywords: ["divorce", "divorcing", "separation", "leave my husband", "leave my wife", "marriage ending"],
+        support: {
+            practical_advice: "Give yourself time to understand what is happening before making a major decision, unless remaining in the situation is unsafe. A licensed individual or couples therapist can help you explore the relationship and your options; couples counselling is not recommended when abuse or coercive control is present. Seek legal advice when you need to understand your rights.",
+            resource_link: {
+                title: "The Difference Between Healthy and Unhealthy Love | Katie Hood | TED",
+                url: "https://www.youtube.com/watch?v=ON4iy8hq2hM",
+                type: "video",
+            },
+        }
+    },
+    {
         keywords: ["fired", "lost my job", "laid off", "job loss", "unemployed"],
         support: {
             practical_advice: "Losing a job is a major life transition, but it does not define your worth. Give yourself a moment to process the shock. When you are ready, update your resume, reach out to your network, and consider treating your job search as your new daily routine, taking regular breaks to rest.",
             resource_link: {
-                title: "How to Bounce Back from Losing Your Job",
-                url: "https://www.youtube.com/watch?v=5VzEEHGeB_M",
+                title: "How to Get Back to Work After a Career Break | Carol Fishman Cohen | TED",
+                url: "https://www.youtube.com/watch?v=_wMTKRixZIE",
                 type: "video",
             },
         }
@@ -84,8 +84,8 @@ const crisisScenarios: CrisisScenario[] = [
         support: {
             practical_advice: "Academic or professional failure is an event, not your identity. Allow yourself to feel disappointed, but do not let it stop you. Review what went wrong objectively, speak to an advisor or mentor for alternative paths, and remember that many successful people have bounced back from failure.",
             resource_link: {
-                title: "The benefits of failure",
-                url: "https://www.youtube.com/watch?v=HhxcFGuKOys",
+                title: "What I Learned From 100 Days of Rejection | Jia Jiang | TED",
+                url: "https://www.youtube.com/watch?v=-vZXgApsPCQ",
                 type: "video",
             },
         }
@@ -107,8 +107,8 @@ const crisisScenarios: CrisisScenario[] = [
         support: {
             practical_advice: "Betrayal shatters trust and causes profound pain. Give yourself time to process the shock before making any permanent decisions. Seek a safe space to express your anger and grief, whether that is with a trusted friend, a journal, or a licensed therapist.",
             resource_link: {
-                title: "Healing from Infidelity",
-                url: "https://www.youtube.com/watch?v=kYJzEw1lQd4",
+                title: "Rethinking Infidelity | Esther Perel | TED",
+                url: "https://www.youtube.com/watch?v=P2AUat93a8Q",
                 type: "video",
             },
         }
@@ -149,7 +149,7 @@ const crisisScenarios: CrisisScenario[] = [
     {
         keywords: ["postpartum", "failing as a mother", "overwhelmed parent", "hate being a parent", "ppd"],
         support: {
-            practical_advice: "Parenting is incredibly demanding, and feeling overwhelmed does not mean you are a bad parent. If you are experiencing postpartum depression, it is a medical condition, not a personal failing. Please reach out to your doctor or a pediatrician to discuss how you are feeling—help is available.",
+            practical_advice: "Parenting is incredibly demanding, and feeling overwhelmed does not mean you are a bad parent. Postpartum depression is a treatable medical condition, not a personal failing. Contact your doctor, obstetric provider, or a qualified mental-health professional to discuss how you are feeling—help is available.",
             resource_link: {
                 title: "Postpartum Depression: Symptoms and Causes",
                 url: "https://www.postpartum.net/get-help/",
@@ -161,10 +161,10 @@ const crisisScenarios: CrisisScenario[] = [
 
 const emotionMapping: Record<string, PracticalSupport> = {
     anxiety: {
-        practical_advice: "Ground yourself by focusing on your breathing. Try the 4-7-8 technique: inhale for 4 seconds, hold for 7, and exhale for 8. Break down whatever is worrying you into small, manageable steps rather than trying to solve everything at once.",
+        practical_advice: "Ground yourself by slowing your breathing without forcing it: breathe in gently, then let the exhale last a little longer. Notice five things you can see and four you can feel. When you are steadier, break the problem into one small next step. Stop the breathing exercise if it makes you dizzy or uncomfortable.",
         resource_link: {
-            title: "How to calm your anxiety",
-            url: "https://www.youtube.com/watch?v=WWloIAQpMcQ",
+            title: "How to Make Stress Your Friend | Kelly McGonigal | TED",
+            url: "https://www.youtube.com/watch?v=RcGyVTAoXEU",
             type: "video",
         },
     },
@@ -177,18 +177,18 @@ const emotionMapping: Record<string, PracticalSupport> = {
         },
     },
     fear: {
-        practical_advice: "Acknowledge your fear without letting it paralyze you. Ask yourself: 'What is the worst that could happen, and how would I handle it?' Often, naming the fear removes its power. Focus only on the next immediate step you need to take.",
+        practical_advice: "Name what you are afraid of and separate what is known from what your mind is predicting. Check whether you are in immediate danger; if you are, move to safety and seek help. Otherwise, focus on one concrete action you can take now and one person you can contact for support.",
         resource_link: {
-            title: "How to Overcome Fear",
-            url: "https://www.youtube.com/watch?v=vj-9D09WjK4",
+            title: "How to Stay Calm When You Know You'll Be Stressed | Daniel Levitin | TED",
+            url: "https://www.youtube.com/watch?v=8jPQjjsBbIc",
             type: "video",
         },
     },
     loneliness: {
-        practical_advice: "Loneliness is a feeling, not a fact about your worth. Try to initiate one small point of contact today—send a text to an old friend, visit a local coffee shop, or join a community group centered around a hobby you enjoy.",
+        practical_advice: "Loneliness is a feeling, not a measure of your worth. Try one small point of contact today—send a message to someone safe, spend time in a shared public place, or join a community group centred on an interest you enjoy. Repeated, low-pressure contact can help connection grow.",
         resource_link: {
-            title: "How to get rid of loneliness",
-            url: "https://www.youtube.com/watch?v=n3Xv_g3g-mA",
+            title: "The Lethality of Loneliness | John Cacioppo | TEDxDesMoines",
+            url: "https://www.youtube.com/watch?v=_0hxl03JoA0",
             type: "video",
         },
     },
@@ -203,16 +203,16 @@ const emotionMapping: Record<string, PracticalSupport> = {
     joy: {
         practical_advice: "Take a moment to fully experience and appreciate this joy. Consider keeping a gratitude journal to write down this moment so you can look back on it during harder times. Share your happiness with someone else to multiply the feeling.",
         resource_link: {
-            title: "The Science of Gratitude and Joy",
-            url: "https://www.youtube.com/watch?v=JMd1CcGZYwU",
+            title: "Want to Be Happy? Be Grateful | David Steindl-Rast | TED",
+            url: "https://www.youtube.com/watch?v=UtBsl3j0YRQ",
             type: "video",
         },
     },
     grief: {
         practical_advice: "Grief takes time and there is no 'right' way to mourn. Allow yourself to feel the emotions without judgment. Prioritize basic self-care like sleeping and eating, and consider joining a grief support group where you can share your feelings with people who understand your loss.",
         resource_link: {
-            title: "How to Deal With Grief and Loss",
-            url: "https://www.youtube.com/watch?v=kYAqPikT0iA",
+            title: "We Don't Move On From Grief—We Move Forward With It | Nora McInerny | TED",
+            url: "https://www.youtube.com/watch?v=khkJkR-ipfw",
             type: "video",
         },
     },
@@ -228,7 +228,7 @@ const emotionMapping: Record<string, PracticalSupport> = {
     shame: {
         practical_advice: "Shame tells you that you are fundamentally broken, but that is a lie. Shame loses its power when it is spoken. Find one trusted, empathetic person to share your feelings with, and practice speaking to yourself with the same kindness you would offer a friend.",
         resource_link: {
-            title: "Listening to Shame - Brené Brown",
+            title: "Listening to Shame | Brené Brown | TED",
             url: "https://www.youtube.com/watch?v=psN1DORYYV0",
             type: "video",
         },
@@ -244,8 +244,8 @@ const emotionMapping: Record<string, PracticalSupport> = {
     frustration: {
         practical_advice: "Frustration happens when your expectations collide with reality. Step back and identify exactly what is blocking you. Ask yourself if the obstacle is within your control. If it isn't, practice radical acceptance and pivot your energy toward what you can change.",
         resource_link: {
-            title: "How to Deal With Frustration",
-            url: "https://www.youtube.com/watch?v=1oGqYg3RSj4",
+            title: "The Gift and Power of Emotional Courage | Susan David | TED",
+            url: "https://www.youtube.com/watch?v=NDQ1Mi5I4rg",
             type: "video",
         },
     },
@@ -258,7 +258,7 @@ const emotionMapping: Record<string, PracticalSupport> = {
         },
     },
     apathy: {
-        practical_advice: "Feeling numb or indifferent is often your mind's way of protecting itself from burnout or trauma. Do not force yourself to feel. Try engaging your physical senses gently—drink something cold, wrap up in a warm blanket, or listen to calming music to slowly reconnect with yourself.",
+        practical_advice: "Feeling numb or indifferent can happen during prolonged stress, burnout, grief, depression, or trauma. Do not force an emotion. Gently engage your senses—drink something cool, hold a warm blanket, or listen to familiar music—and consider speaking with a health professional if the numbness persists or interferes with daily life.",
         resource_link: {
             title: "Why Do I Feel Numb? Causes and Coping",
             url: "https://www.medicalnewstoday.com/articles/feeling-numb",
@@ -268,8 +268,8 @@ const emotionMapping: Record<string, PracticalSupport> = {
     jealousy: {
         practical_advice: "Jealousy is a normal human emotion that highlights what we deeply desire. Instead of resenting the other person, get curious about your feeling. Use it as a compass to understand your own unmet goals, and gently shift your focus back to your own unique journey.",
         resource_link: {
-            title: "How to Overcome Jealousy",
-            url: "https://www.youtube.com/watch?v=Y0cHRF-XkC0",
+            title: "The Difference Between Healthy and Unhealthy Love | Katie Hood | TED",
+            url: "https://www.youtube.com/watch?v=ON4iy8hq2hM",
             type: "video",
         },
     },
@@ -282,10 +282,10 @@ const emotionMapping: Record<string, PracticalSupport> = {
         },
     },
     stress: {
-        practical_advice: "Chronic stress physically wears down your body. You must intentionally complete the 'stress cycle'. Engage in 20 minutes of physical activity, have a deep conversation with a friend, or have a good cry—these actions signal to your brain that you are finally safe.",
+        practical_advice: "Ongoing stress can affect both physical and emotional health. Try a manageable action that helps your body settle, such as a short walk, gentle stretching, slow breathing, rest, or a supportive conversation. If stress is persistent or is disrupting sleep and daily functioning, consider speaking with a health professional.",
         resource_link: {
-            title: "How to Complete the Stress Cycle",
-            url: "https://www.youtube.com/watch?v=JzS_rEQ0_qE",
+            title: "How to Make Stress Your Friend | Kelly McGonigal | TED",
+            url: "https://www.youtube.com/watch?v=RcGyVTAoXEU",
             type: "video",
         },
     }

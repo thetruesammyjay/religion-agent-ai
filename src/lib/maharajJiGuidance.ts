@@ -22,6 +22,18 @@ const INTENSIFIERS = [
     "terrified",
     "devastated",
 ];
+const URGENT_SAFETY_PHRASES = [
+    "suicide",
+    "kill myself",
+    "end my life",
+    "want to die",
+    "end it all",
+    "abuse",
+    "abusive",
+    "hit me",
+    "beating me",
+    "domestic violence",
+];
 
 function readField(block: string, field: string) {
     const match = block.match(new RegExp(`^- ${field}:\\s*(.+)$`, "im"));
@@ -45,6 +57,11 @@ function parseGuidanceSource(markdown: string): GuidanceRecord[] {
                 relevance_explanation: readField(block, "Relevance"),
                 source_url: readField(block, "Source"),
                 exact_excerpt: readField(block, "Exact excerpt"),
+                resource_link: {
+                    title: readField(block, "Resource title"),
+                    url: readField(block, "Resource URL"),
+                    type: "video" as const,
+                },
                 keywords: readField(block, "Keywords")
                     .split(",")
                     .map((keyword) => keyword.trim().toLowerCase())
@@ -129,7 +146,23 @@ export function getMaharajJiGuidance(text: string, emotion?: Emotion | null): Ma
         relevance_explanation: record.relevance_explanation,
         source_url: record.source_url,
         exact_excerpt: record.exact_excerpt,
+        resource_link:
+            record.resource_link?.title && record.resource_link.url
+                ? record.resource_link
+                : undefined,
     };
+}
+
+export function getMaharajJiResource(text: string, emotion?: Emotion | null) {
+    const input = normalise(text);
+    if (URGENT_SAFETY_PHRASES.some((phrase) => input.includes(phrase))) {
+        return undefined;
+    }
+
+    const record = findRecord(text, emotion);
+    return record.resource_link?.title && record.resource_link.url
+        ? record.resource_link
+        : undefined;
 }
 
 export function buildMaharajJiMessage(text: string, emotion?: Emotion | null) {

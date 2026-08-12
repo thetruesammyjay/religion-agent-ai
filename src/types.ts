@@ -25,6 +25,7 @@ export interface MaharajJiTeaching {
     relevance_explanation: string;
     source_url?: string;
     exact_excerpt?: string;
+    resource_link?: { title: string; url: string; type: "video" | "article" };
 }
 
 export interface ChristianResponse {

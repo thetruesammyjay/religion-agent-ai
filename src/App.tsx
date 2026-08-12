@@ -10,6 +10,7 @@ import {
     buildMaharajJiMessage,
     detectMaharajJiEmotion,
     getMaharajJiGuidance,
+    getMaharajJiResource,
 } from "./lib/maharajJiGuidance";
 import { getPracticalSupport } from "./lib/practicalSupport";
 import type { ApiFaith, ApiResponse, Faith } from "./types";
@@ -65,7 +66,7 @@ function App() {
                 maharaj_ji_teaching: getMaharajJiGuidance(text, emotion),
                 compassion_message: buildMaharajJiMessage(text, emotion),
                 practical_advice: support.practical_advice,
-                resource_link: support.resource_link,
+                resource_link: getMaharajJiResource(text, emotion) ?? support.resource_link,
             });
             setIsLoading(false);
             setTimeout(scrollToResponse, 100);
@@ -102,7 +103,9 @@ function App() {
                     ),
                     compassion_message: `${data.compassion_message}\n\nMaharaj Ji guidance: ${maharajMessage}`,
                     practical_advice: support.practical_advice,
-                    resource_link: support.resource_link,
+                    resource_link:
+                        getMaharajJiResource(text, data.detect_emotion) ??
+                        support.resource_link,
                 });
             } else {
                 setResponse({
